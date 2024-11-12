@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import axios from "axios";
 import config from "../config";
 import Mymodal from "../components/MyModal";
-import dayjs from 'dayjs';
+import dayjs from "dayjs"
 function Index() {
   const [products, setProducts] = useState([]);
   const [carts, setCarts] = useState([]); // Item in Carts
@@ -13,7 +13,8 @@ function Index() {
   const [customerName, setCustomerName] = useState('');
   const [customerPhone, setCustomerPhone] = useState('');
   const [customerAddress, setCustomerAddress] = useState('');
-  const [payDate , setPayDate] = useState(dayjs (new Date()).format('YYYY-DD-MM'));
+  const [payDate, setPayDate] = useState(dayjs(new Date()).format('YYYY-MM-DD'));
+
   const [payTime, setPayTime] = useState('');
 
   useEffect(() => {
@@ -128,6 +129,7 @@ function Index() {
         customerPhone: customerPhone,
         customerAddress: customerAddress,
         payDate: payDate,
+        payTime: payTime,
         carts: carts
       }
       const res = await axios.post(config.apiPath + '/api/sale/save', payload);
