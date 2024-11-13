@@ -143,6 +143,12 @@ function Index() {
           icon: 'success'
 
         })
+        document.getElementById('modalCart_btnClose').click();
+        setCustomerName('');
+        setCustomerPhone('');
+        setCustomerAddress('');
+        setPayDate(new Date());
+        setPayTime('');
       }
     } catch (e) {
       Swal.fire({
